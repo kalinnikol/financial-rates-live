@@ -8,10 +8,13 @@ var app = app || {};
     });
     }*/
     function getAlphabetically() {
-        httpRequest.getJSON(app.servicesBaseUrl  + "places")
-        .then(function(places) {
-            viewModel.set("places", places); 
-            console.log(places);
+        httpRequest.getJSON("http://marketools.plus500.com/Feeds/UpdateTable?instsIds=2")
+        .then(function(data) {
+        var test = JSON.stringify(data);
+            var obj= JQuery.parseJSON(test);
+            var t = 5;
+            var testDiv = $('#test');
+            testDiv.html(test);
         });
     }
     
@@ -28,14 +31,13 @@ var app = app || {};
     }
     
     var viewModel = kendo.observable({
-        places:[],
         getAlphabetically: getAlphabetically,
         getByLocation: getByLocation
     });
     
     function init(e) {
         kendo.bind(e.view.element, viewModel);
-       getAlphabetically();
+       //getAlphabetically();
     }   
     
     a.places = {
