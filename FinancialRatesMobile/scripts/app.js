@@ -7,5 +7,6 @@ var app = app || {};
         app.servicesBaseUrl = "http://marketools.plus500.com/Feeds/UpdateTable?instsIds=";
         
         var kendoApp = new kendo.mobile.Application(document.body);
-    });    
+    });
+    
 }());
